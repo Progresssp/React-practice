@@ -1,19 +1,18 @@
 import { useState, useEffect } from "react";
 
 function ProfileCard() {
-    const {profile, seeProfile} = useState(null);
-    const {loading, seeLoading} = useState(true);
+    const [profile, setProfile] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            seeProfile({
+            setProfile({
                 name: "Ogboi progress",
                 email: "ogboi@progress.com",
                 city: "Lagos",
             });
-
-            SeeLoading(false);
-    }, 2000);
+            setLoading(false);
+    }, 1000);
 
     return () => clearTimeout(timer);
 }, []);
@@ -31,6 +30,7 @@ return (
     </div>
 );
 }
+
 
 
 export default ProfileCard;
